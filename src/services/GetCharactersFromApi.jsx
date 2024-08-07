@@ -8,9 +8,10 @@ const getCharacters = () => {
           name: character.name,
           specie: character.species,
           id: character.id,
+          originPlanet: character.origin.name,
+          episode: character.episode
         };
       });
-      console.log("prueba fetch:", parsedCharacters)
       return parsedCharacters;
     });
 };
