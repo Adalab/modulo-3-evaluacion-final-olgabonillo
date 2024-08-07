@@ -5,17 +5,15 @@ import CharacterList from "./CharacterList";
 import CharacterDetail from "./CharacterDetail";
 import getCharacters from "../services/GetCharactersFromApi";
 import { useEffect, useState } from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   const [characters, setCharacters] = useState([]);
   const [filterName, setFilterName] = useState("");
-  const [filterSpecies, setFilterSpecies] = useState("");
 
   useEffect(() => {
     getCharacters().then((charactersData) => {
       setCharacters(charactersData);
-      console.log(charactersData);
     });
   }, []);
 
@@ -23,18 +21,9 @@ function App() {
     setFilterName(valueName);
   };
 
-  const handleFilterSpecies = (valueSpecies) => {
-    setFilterSpecies(valueSpecies);
-  };
-
   const filteredCharacters = characters
     .filter((character) => {
       return character.name.toLowerCase().includes(filterName.toLowerCase());
-    })
-    .filter((character) => {
-      return character.species
-        .toLowerCase()
-        .includes(filterSpecies.toLowerCase());
     });
 
   return (
@@ -48,15 +37,13 @@ function App() {
               <>
                 <Filters
                   onChangeName={handleFilterName}
-                  onChangeGender={handleFilterSpecies}
                   valueName={filterName}
-                  valueGender={filterSpecies}
                 />
                 <CharacterList characters={filteredCharacters} />
               </>
             }
           />
-          <Route path="/detail/:userId" element={<CharacterDetail />} />
+          <Route path="/detail" element={<CharacterDetail />} />
         </Routes>
       </main>
     </>

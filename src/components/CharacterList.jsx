@@ -1,9 +1,16 @@
 import CharacterCard from "./CharacterCard";
 
-function CharacterList() {
+function CharacterList({ characters }) {
+  const charactersElements = characters.map((character) => {
+    return <CharacterCard key={character.id} characterInfo={character} />;
+  });
   return (
-    <div>CharacterList</div>
-  )
+    <section>
+      <ul>
+        {charactersElements}
+      </ul>
+    </section>
+  );
 }
 
 export default CharacterList

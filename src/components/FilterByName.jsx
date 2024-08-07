@@ -5,8 +5,8 @@ function FilterByName({ onChangeName, valueName }) {
   
     return (
       <div>
-        <label className="input" htmlFor="name">Busca por nombre:</label>
-        <input value={valueName} type="text" id="name" onChange={handleChangeName} />
+        <label className="input" htmlFor="name"></label>
+        <input className="input" value={valueName} type="text" id="name"  placeholder="Busca tu personaje..." onChange={handleChangeName} />
       </div>
     );
   }

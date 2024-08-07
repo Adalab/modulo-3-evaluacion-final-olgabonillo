@@ -1,14 +1,10 @@
 import FilterByName from "./FilterByName";
-import FilterBySpecies from "./FilterBySpecies";
 
-function Filters(onChangeName, onChangeSpecies, valueName, valueSpecies) {
+
+function Filters({ onChangeName, valueName }) {
   return (
     <form>
       <FilterByName onChangeName={onChangeName} valueName={valueName} />
-      <FilterBySpecies
-        onChangeGender={onChangeSpecies}
-        valueGender={valueSpecies}
-      />
     </form>
   );
 }
