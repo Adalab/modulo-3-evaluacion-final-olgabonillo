@@ -1,7 +1,16 @@
-function Filters() {
+import FilterByName from "./FilterByName";
+import FilterBySpecies from "./FilterBySpecies";
+
+function Filters(onChangeName, onChangeSpecies, valueName, valueSpecies) {
   return (
-    <div>Filters</div>
-  )
+    <form>
+      <FilterByName onChangeName={onChangeName} valueName={valueName} />
+      <FilterBySpecies
+        onChangeGender={onChangeSpecies}
+        valueGender={valueSpecies}
+      />
+    </form>
+  );
 }
 
-export default Filters
+export default Filters;
