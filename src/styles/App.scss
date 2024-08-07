@@ -61,5 +61,18 @@ body {
 
 .detail-card {
   background-color: aquamarine;
+  margin: 10px;
+}
+
+.link-home {
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  align-items: end;
+}
+
+.not-found {
+  color: aquamarine;
+  font-size: 40px;
 }
 

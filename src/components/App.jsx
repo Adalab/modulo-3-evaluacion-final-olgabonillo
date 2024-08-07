@@ -9,22 +9,23 @@ import { Routes, Route, useLocation, matchPath } from "react-router-dom";
 
 function App() {
   const [characters, setCharacters] = useState([]);
-  const [filterName, setFilterName] = useState("");
+  const [filterValue, setfilterValue] = useState("");
 
   useEffect(() => {
     getCharacters().then((charactersData) => {
-      console.log("characters: ", charactersData);
       setCharacters(charactersData);
-      console.log("characters: ", characters);
     });
   }, []);
 
-  const handleFilterName = (valueName) => {
-    setFilterName(valueName);
+  const handlefilterValue = (valueName) => {
+    setfilterValue(valueName);
   };
 
   const filteredCharacters = characters.filter((character) => {
-    return character.name.toLowerCase().includes(filterName.toLowerCase());
+    return (
+      character.name.toLowerCase().includes(filterValue.toLowerCase()) ||
+      character.specie.toLowerCase().includes(filterValue.toLowerCase()) 
+    )
   });
 
   const { pathname } = useLocation();
@@ -44,8 +45,8 @@ function App() {
             element={
               <>
                 <Filters
-                  onChangeName={handleFilterName}
-                  valueName={filterName}
+                  onChangeName={handlefilterValue}
+                  valueName={filterValue}
                 />
                 <CharacterList characters={filteredCharacters} />
               </>

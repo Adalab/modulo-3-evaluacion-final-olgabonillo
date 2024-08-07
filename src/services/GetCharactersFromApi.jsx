@@ -9,7 +9,8 @@ const getCharacters = () => {
           specie: character.species,
           id: character.id,
           originPlanet: character.origin.name,
-          episode: character.episode
+          episode: character.episode.length,
+          status: character.status,
         };
       });
       return parsedCharacters;

@@ -1,17 +1,20 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function CharacterDetail({ characterInfo }) {
-
   return (
     <>
       <section>
+        <Link className="link-home" to="/">⬅Volver al inicio</Link>
         <div className="detail-card">
           <img src={characterInfo.photo} alt={characterInfo.name} />
           <h3 className="name-characters">{characterInfo.name}</h3>
-          <p>{characterInfo.specie}</p>
-          <p>{characterInfo.originPlanet}</p>
-          <p>{characterInfo.episode}</p>
+          
+          <p>Estado: {characterInfo.status}</p>
+          <p>Tipo de especie: {characterInfo.specie}</p>
+          <p>Planeta de origen: {characterInfo.originPlanet}</p>
+          <p>Número de episodios: {characterInfo.episode}</p>
         </div>
       </section>
     </>
