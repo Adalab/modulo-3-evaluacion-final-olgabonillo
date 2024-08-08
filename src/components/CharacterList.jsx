@@ -1,13 +1,13 @@
 import CharacterCard from "./CharacterCard";
 
-function CharacterList({ characters }) {
+function CharacterList({ characters, filterValue }) {
   let charactersElements;
   if (characters.length == 0){
     return (
       <section>
         <ul>
         <li className="character-item">
-          <p className="not-found">⚠️ No se ha encontrado ningún personaje con la palabra introducida en el buscador</p>
+          <p className="not-found">⚠️ No se ha encontrado ningún personaje con la palabra {filterValue}</p>
         </li>
         </ul>
       </section>

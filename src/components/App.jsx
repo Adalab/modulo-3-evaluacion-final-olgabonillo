@@ -48,7 +48,7 @@ function App() {
                   onChangeName={handlefilterValue}
                   valueName={filterValue}
                 />
-                <CharacterList characters={filteredCharacters} />
+                <CharacterList characters={filteredCharacters} filterValue={filterValue} />
               </>
             }
           />
