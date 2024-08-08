@@ -8,7 +8,7 @@ function CharacterCard({ characterInfo }) {
           <div className="info-characters">
             <img src={characterInfo.photo} alt={characterInfo.name} />
             <h3 className="name-characters">{characterInfo.name}</h3>
-            <h4>{characterInfo.specie}</h4>
+            <h4 className="name-characters">{characterInfo.specie}</h4>
           </div>
         </li>
       </Link>

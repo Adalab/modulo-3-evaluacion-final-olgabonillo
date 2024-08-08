@@ -9,12 +9,12 @@ function CharacterDetail({ characterInfo }) {
         <Link className="link-home" to="/">⬅Volver al inicio</Link>
         <div className="detail-card">
           <img src={characterInfo.photo} alt={characterInfo.name} />
-          <h3 className="name-characters">{characterInfo.name}</h3>
+          <h3 className="name-characters-title">{characterInfo.name}</h3>
           
-          <p>Estado: {characterInfo.status}</p>
-          <p>Tipo de especie: {characterInfo.specie}</p>
-          <p>Planeta de origen: {characterInfo.originPlanet}</p>
-          <p>Número de episodios: {characterInfo.episode}</p>
+          <p className="name-characters">Estado: {characterInfo.status}</p>
+          <p className="name-characters">Tipo de especie: {characterInfo.specie}</p>
+          <p className="name-characters">Planeta de origen: {characterInfo.originPlanet}</p>
+          <p className="name-characters">Número de episodios: {characterInfo.episode}</p>
         </div>
       </section>
     </>

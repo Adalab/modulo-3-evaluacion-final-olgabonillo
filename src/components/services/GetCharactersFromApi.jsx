@@ -1,5 +1,5 @@
 const getCharacters = () => {
-  return fetch("https://raw.githubusercontent.com/Adalab/rick-y-morty/master/data/rick-y-morty.json")
+  return fetch("https://rickandmortyapi.com/api/character")
     .then((res) => res.json())
     .then((data) => {
       const parsedCharacters = data.results.map((character) => {

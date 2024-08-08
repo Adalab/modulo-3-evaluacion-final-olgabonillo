@@ -55,13 +55,22 @@ body {
   padding: 5px;
 }
 
+.name-characters-title {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: black;
+  font-size: 25px;
+}
+
 .name-characters {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: black;
+  font-size: 15px;
 }
 
 .detail-card {
   background-color: aquamarine;
   margin: 10px;
+  padding: 15px;
 }
 
 .link-home {
